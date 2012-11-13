@@ -1,0 +1,8 @@
+*.pyc
+*~
+wsgi.py
+.project
+
+.pydevproject
+
+.settings/
