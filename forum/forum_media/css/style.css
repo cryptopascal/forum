@@ -1,0 +1,753 @@
+body {
+    background-color: #F5F2EF;
+}
+.intro{
+    color: #777777;
+    font-size: 18px;
+    margin: 0.5em 0 3em;
+    text-align: center;
+}
+.introH2{
+	margin: 0;
+    text-align: center;
+}
+
+#h_banner {
+    border-bottom: 1px solid #CCCCCC;
+    font-size: 12px;
+    height: 66px;
+    /*padding: 18px 20px 0;*/
+    position: relative;
+    z-index: 2;
+}
+
+.Shared_Utilities {
+    /*height: 12px;*/
+    /*position: absolute;
+    right: 0;*/
+	float:right;
+    margin-top: 42px;
+}
+
+.Shared_Utilities .utility:first-child {
+    border-left: medium none;
+    padding-left: 0;
+}
+.Shared_Utilities .utility {
+    border-left: 1px solid #D7CBBD;
+    float: left;
+    padding: 0 10px;
+    position: relative;
+	list-style: none outside none;
+}
+
+
+.logo_region_v3 {
+    left: 21px;
+    position: absolute;
+    top: 7px;
+	background-color: #0088CC; 
+	width:338px;
+	height:60px
+}
+.nav_ul_logo{
+	padding-top:30px;
+}
+
+.leavemarge{
+	margin-top:5px;
+}
+
+.leavemarge2{
+	margin-top:10px;
+}
+
+.leavemarge3{
+	margin-top:20px;
+}
+
+.leavemargebottom{
+	margin-bottom:10px;
+}
+
+.fill-background{
+	background-color: #0088CC;
+	height: 170px;
+}
+
+#wrapper {
+    background: url("../images/wrapper_search.png") repeat-y scroll 0 0 transparent;
+    /*left: -31px;*/
+    padding: 0 10px;
+    position: relative;
+    width: 1019px;
+}
+
+.wrapper-size{
+    /*left: -31px;*/
+    padding: 0 10px;
+    position: relative;
+    width: 1019px;
+}
+
+.scrollHeader{
+	box-shadow: -1px 7px 10px #CCCCCC;
+    padding: 0 20px;
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+    /*width: 980px;*/
+    z-index: 500;
+}
+
+.scrollHeader .profList {
+    background-color: #FFFFFF;
+}
+
+.scrollHeader .profListHeader {
+    border: medium none;
+    height: 50px;
+}
+
+#SearchPageResults {
+    float: left;
+    position: relative;
+}
+
+.resultsGrid{
+	position: relative;
+	margin-top:5px;
+}
+
+.profListHeader{
+    border-bottom: 1px solid #CCCCCC;
+    border-top: 1px solid #CCCCCC;
+    height: 46px;
+    padding-top: 4px;
+	}
+.headerProfLabel {
+    float: left;
+    width: 380px;
+}	
+.resultsHeading {
+    font-size: 15px;
+    font-weight: bold;
+}
+.accepts {
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    width: 100px;
+}
+.prevLinkColumn {
+    float: left;
+    width: 37px;
+}
+.nextLinkColumn {
+    float: right;
+    height: 37px;
+    padding-right: 2px;
+}
+
+
+.timesViewport {
+    height: 2752px;
+    left: 420px;
+    margin-top: 1px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 525px;
+}
+.timesGrid {
+    left: 0;
+    position: absolute;
+	width: 525px;
+}
+.calendarContainer {
+    height: 51px;
+}
+
+.nextWeekLink {
+    background: url("../images/next_arr.gif") no-repeat scroll 4px 0 transparent;
+    display: block;
+    font-size: 12px;
+    padding-top: 16px;
+}
+
+.prevWeekLink {
+    background: url("../images/prev_arr.gif") no-repeat scroll 4px 0 transparent;
+    display: block;
+    font-size: 12px;
+    margin: 0 0 0 3px;
+    padding-top: 16px;
+}
+
+.nextPrevLoading {
+    background: url("../images/smallspinner.gif") no-repeat scroll 0 0 transparent;
+    display: none;
+    height: 18px;
+    margin: 8px 6px 0 13px;
+    width: 16px;
+}
+
+.nextPrevLoading {
+    background: url("../images/smallspinner.gif") no-repeat scroll 0 0 transparent;
+    display: none;
+    height: 18px;
+    margin: 8px 6px 0 13px;
+    width: 16px;
+}
+
+
+.calendar.alt {
+    background-color: #F7F3EE;
+}
+.calendar {
+    float: left;
+    height: 43px;
+    padding: 4px 0 0 5px;
+    width: 70px;
+}
+.calendar .day {
+    font-size: 12px;
+    font-weight: bold;
+}
+.nopass, .n {
+    clear: both;
+}
+.timesRow {
+    /*height: 82px;*/
+    overflow: hidden;
+    position: relative;
+}
+.timesCol a {
+    display: block;
+    left: -6px;
+    line-height: 16px;
+    position: relative;
+    text-align: center;
+    z-index: 3;
+}
+.mapMarkerColumn {
+    float: left;
+    text-align: center;
+    width: 30px;
+}
+
+.profRow {
+    padding: 9px 0 1px;
+    position: relative;
+    z-index: 2;
+}
+
+.mapMarker {
+/*add pics*/
+    /*background-image: url("http://WEB10static1.zdstatic.com/images/gmap/iconSprites__20120629120923.png");*/
+    height: 34px;
+    margin-left: 4px;
+    width: 20px;
+}
+.profColumn {
+    float: left;
+    height: 100%;
+}
+.profSpecTitle {
+    font-weight: bold;
+    height: 17px;
+    padding: 0 0 3px;
+}
+.profContainer {
+    float: left;
+    width: 250px;
+}
+.profilePhoto {
+	background-color: #0088CC; /*delete after adding profile pic*/
+    border: 1px solid #CCCCCC;
+    float: left;
+    font-size: 8px;
+    height: 85px;
+    margin: 0 6px 10px 0;
+    width: 74px;
+}
+.profInfoContainer {
+    float: left;
+    line-height: 16px;
+    width: 160px;
+}
+.docName {
+    font-weight: bold;
+}
+.profRowBorder {
+    background-color: #CCCCCC;
+    border-bottom: 3px solid #FFFFFF;
+    border-top: 3px solid #FFFFFF;
+    height: 1px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    z-index: 2;
+}
+
+.suggestedDocHeader, .resultsHeader {
+    float: left;
+    left: -28px;
+    position: relative;
+    /*visibility: hidden;*/
+}
+.suggestedDocHeader div, .resultsHeader div {
+    color: #FFFFFF;
+    font-size: 18px;
+    left: 26px;
+    line-height: 31px;
+    position: absolute;
+    top: 0;
+}
+
+.hiddenTimes {
+	display:none;
+}
+
+.resultsHeader span {
+    left: -19px;
+    position: absolute;
+    top: 0;
+    width: 250px;
+}
+.resultsHeader span.pickAppt {
+    left: 433px;
+}
+.resultsHeader span.seeDoc {
+    left: 732px;
+}
+.align-right{
+	float:right;
+}
+.simpleFooter {
+    background: url("../images/footer_bg3.png") no-repeat scroll 2px 0 transparent;
+    color: #666666;
+    font-size: 13px;
+    left: -3px;
+    /*margin: 0 auto 15px 0;
+    max-width: 1028px;*/
+    padding: 14px 0 5px 10px;
+    position: relative;
+	color: #666666;
+    font-size: 13px;
+    margin: 0 auto 10px;
+    max-width: 1030px;
+    text-align: left;
+   /* text-align: left;*/
+    top: 0;
+    width: 1028px;
+}
+
+#small_footer{
+    color: #777777;
+    text-align: center;
+}
+#small_footer p {
+    color: #777777;
+    font-size: 14px;
+}
+#small_footer a {
+    color: #777777;
+    margin: 0 2em;
+}
+
+/*******************bookin-1***************************/
+.ReskinContent {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    min-height: 725px;
+	padding: 2%;	
+}
+.status {
+    background: url("../images/status-bg.png") no-repeat scroll 0 0 transparent;
+    height: 457px;
+    /*position: absolute;*/
+    /*right: -12px;*/
+    top: 135px;
+    width: 392px;
+	float:right;
+}
+
+.status-card{
+    padding: 20px 103px 20px 44px;
+}
+
+.doctor{
+    border-bottom: 1px solid #E6E6E6;
+    color: gray;
+    font-size: 13px;
+    line-height: 16px;
+    margin-bottom: 15px;
+    padding-bottom: 20px;
+    text-decoration: none;
+	display: block;
+}
+
+.doctor:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.doctor-image{
+    background-color: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    box-shadow: 0 0 2px #CCCCCC;
+    color: #FFFFFF;
+    float: left;
+    overflow: hidden;
+    padding: 3px;
+    width: 62px;
+}
+.doctor-info {
+    float: left;
+    padding-left: 13px;
+    width: 162px;
+}
+
+.doctor-name {
+    color: #48A8BD;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+.doctor-specialty {
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+.doctor-address {
+    font-size: 12px;
+    padding-top: 4px;
+}
+.doctor span{
+	display:block;
+}
+.status-date {
+    color: #585858;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 16px;
+    margin-bottom: 4px;
+}
+.status-time {
+    color: gray;
+    font-size: 16px;
+    line-height: 16px;
+    margin-bottom: 15px;
+}
+
+/***********foooooter***************/
+.Shared_Footer {
+    color: #6F5F50;
+    font-family: Arial;
+    font-size: 13px;
+    margin: 30px 18px 0;
+    text-align: left;
+    /*width: 946px;*/
+}
+.contactinfo {
+    background-color: #FAF8F5;
+    border: 1px solid #CCCCCC;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 0 4px rgba(67, 54, 50, 0.15) inset;
+    color: #978472;
+    font-size: 18px;
+    padding: 16px;
+    text-align: center;
+}
+
+/***************************bookin_sign*******************/
+.join{
+	height: 200px;
+    margin-top: 70px;
+    padding-bottom: 0;
+    padding-left: 40px;
+    padding-right: 0;
+    padding-top: 70px;
+}
+
+.signin{
+	border-right: 1px solid #DDDDDD;	
+    margin-top: 30px;
+    padding-bottom: 0;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 70px;    
+
+}
+.illusrate{
+	margin-top: 30px;
+}
+#other_patient{
+	border: 1px solid #F1F1F1;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    padding: 5px 10px;
+    position: relative;
+    top: -15px;
+	margin-left: 20px;
+	display : none;
+}
+/*****************user******************/
+.leave-padding1
+{
+	padding:10px 10px  0px 10px;
+}
+.leave-padding-left1
+{
+	padding-left:10px;
+}
+.leave-padding-left2
+{
+	padding-left:20px;
+}
+/*************doctor-profil****************/
+.backToSearch {
+    padding: 0 0 15px 5px;
+}
+.left_arrow{
+	float: left;
+    margin: 2px 5px;
+	border-right: 6px solid #48A8BD;
+	border-bottom: 5px solid transparent;
+    border-top: 5px solid transparent;
+    height: 0;
+    width: 0;
+}
+.link_green{
+	color:#48A8BD;
+}
+.photos {
+    position: relative;
+    text-align: center;
+}
+.bigPhoto {
+    position: relative;
+}
+.doctor-photo-img{
+	padding: 4px;
+	background-color: #0088CC; /*rgba(205, 205, 205, 0.15);*/
+    border: 1px solid #DDDDDD;
+    box-shadow: 0 0 4px #CCCCCC;
+    cursor: pointer;
+    display: inline-block;
+}
+.topRow {
+    border-bottom: 1px solid #CCCCCC;
+    display: inline-block;
+    padding-bottom: 10px;
+	width: 100%;
+}
+.col1_divName{
+    height: 70px;
+    width: 170px;
+	margin-right: 20px;
+    /*position: absolute;*/
+}
+.nameDiv {
+    bottom: 0;
+    /*position: absolute;*/
+}
+.docLongName {
+    font-size: 18px;
+    font-weight: bold;
+	color: #4D4D4D !important;
+    text-decoration: none;
+}
+.docName_profil{
+	font-size: 100%;
+	font-weight: normal;
+	line-height: 20px
+}
+.title{
+	color: #B6B6B6;
+    font-size: 12px;
+    text-shadow: 1px 1px 0 rgba(182, 182, 182, 0.3);
+}
+.profSpecTitle_profil{
+	color: #808080;
+    font-size: 13px;
+    font-weight: bold;
+}
+.bottomRow{
+	padding: 10px 0;
+}
+
+.h3_profil{
+	color: #4D4D4D !important;
+    font-size: 13px;
+    font-weight: bold;
+}
+.section-set{
+	color: #808080;
+}
+.blue-back{
+	background-color: #E9F2F4;
+    display: inline-block;
+    position: relative;
+}
+.timecard {
+    margin-top: 30px;
+    position: relative;
+}
+.timecard .header {
+    left: -4px;
+    margin-bottom: -5px;
+    position: absolute;
+    top: -27px;
+    z-index: 10;
+}
+.markerv2{
+	background-color: #E9F2F4;
+	height: 40px;
+    left: 10px;
+    top: -35px;
+    width: 27px;
+	position: absolute;
+    z-index: 15;
+}
+.address{
+	color: #4C4C4C;
+    font-size: 12px;
+    font-weight: bold;
+	left: 42px;
+    top: -16px;
+	position: absolute;
+    z-index: 15;
+}
+.subaddressv2{
+	font-weight: normal;
+}
+.timecard .cardborder {
+    background-color: white;
+    border-color: #C6CBCE;
+    border-radius: 0 5px 5px 5px;
+    border-right: 1px solid #C6CBCE;
+    border-style: solid;
+    border-width: 1px 1px 1px 2px;
+    box-shadow: -2px -1px 2px #D1DBDD, 2px 3px 3px #D1DBDD;
+    margin-top: 35px;
+    padding: 5px;
+    position: relative;
+    width: 568px;
+}
+.timecard.IE .cardborder {
+    border: 1px solid lightGrey;
+}
+.timecard .card {
+    background-color: white;
+    border-bottom: 1px solid #D3D3D3;
+    border-left: 1px solid #D3D3D3;
+    border-right: 1px solid #D3D3D3;
+    min-height: 140px;
+}
+.timecard.IE .cardborder .header {
+    float: left;
+    left: 0;
+    margin-top: -2px;
+    padding: 0 0 0 5px;
+    position: relative;
+    top: 0;
+}
+.profListHeader_p {
+    border-bottom: 1px solid #CCCCCC;
+    border-top: 1px solid #CCCCCC !important;
+    height: 32px;
+    padding-top: 4px;
+}
+.SearchPageResults .profRow {
+    padding: 13px 0 1px;
+    position: relative;
+    z-index: 2;
+	min-height: 110px;
+}
+.SearchPageResults .profRowBorder {
+    background-color: #CCCCCC;
+    border-bottom: 1px solid #FFFFFF;
+    border-top: 1px solid #FFFFFF;
+    height: 1px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    z-index: 2;
+}
+.SearchPageResults .calendarContainer {
+    height: 37px;
+	line-height: 16px;
+}
+.SearchPageResults .calendar {
+    color: #4D4D4D;
+    float: left;
+    height: 32px;
+    padding: 4px 0 0 9px;
+    width: 63px;
+}
+.SearchPageResults .calendar.alt {
+    background-color: #FFF8F2;
+	
+}
+.SearchPageResults .calendar .day {
+    font-size: 12px;
+    font-weight: bold;
+}
+.SearchPageResults .calendar .date {
+    color: #999999;
+    font-size: 11px;
+}
+.SearchPageResults .timesGrid {
+    position: relative;
+}
+.blue-back .topshadow {
+    background-image: url("../images/dropshadow.png");
+    height: 13px;
+}
+.blue-back .bottomshadow {
+    background-image: url("../images/bottom_line.png");
+    height: 1px;
+	margin-top: 15px;
+}
+
+.createuser_title h2{
+	border-bottom: 1px solid #D2D3D3;
+    color: #4D4D4D;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 30px;
+    margin-bottom: 30px;
+    padding-bottom: 18px;
+}
+
+
+/*********************************login.html*************/
+.direct-signin{
+	border-right: 1px solid #DDDDDD;	
+  
+
+}
+
+
+.joinUs{
+	height: 200px;
+    margin-top: 40px;
+    padding-bottom: 0;
+    padding-left: 40px;
+    padding-right: 0;
+    padding-top: 0px;
+}
+
+.SignIn {
+    float: left;
+    padding: 35px 40px;
+    position: relative;
+    /*width: 660px;*/
+}
