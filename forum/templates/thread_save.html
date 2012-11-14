@@ -1,0 +1,21 @@
+{% extends "general.html" %}
+{% load crispy_forms_tags %}
+{% block head_title %}New Thread{% endblock %}
+
+{% block site_wrapper %}	
+	
+	
+	<div class="row-fluid">
+		<div class="span8">
+				<h2>New Thread:</h2><br>
+				{% if form.errors %}
+	            <div class="alert alert-error">
+	                <a class="close" data-dismiss="alert" href="#">×</a>
+	                <p><strong>Oh snap!</strong> Check errors.</p>
+	            </div>
+	        	{% endif %}		        
+	            {% crispy form form.helper %}		    
+		</div>	
+	</div>
+	
+{% endblock %}

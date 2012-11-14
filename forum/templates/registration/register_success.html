@@ -1,0 +1,10 @@
+{% extends "general.html" %}
+{% block head_title %}Success{% endblock %}
+
+{% block site_wrapper %}	
+	<div class="hero-unit">
+        <h1>Registration Successful !</h1>
+        <p>Thank you for registering. You can wait to be redirected to logIn page or <a href="/login/">login</a></p>
+    </div>
+	<meta HTTP-EQUIV="REFRESH" content="5; /login/">	
+{% endblock %}
