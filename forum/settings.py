@@ -117,12 +117,14 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'my_forum',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     #registration,
     #'registration',
-    'crispy_forms'
+    'crispy_forms',
+    'south'
 )
 #EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
