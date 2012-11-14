@@ -7,6 +7,8 @@ Created on 13 nov. 2012
 from django.db import models
 from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
+from django.utils.translation import ugettext_lazy as _
+
 
 
 
@@ -16,7 +18,6 @@ class Thread(models.Model):
     """
     slug = models.SlugField(max_length=100, verbose_name=_('slug'), unique=True)
     title = models.CharField(max_length=100)
-    description = models.CharField(max_length=4000)
     created_by = models.ForeignKey(User)   
     created_at =models.DateTimeField(auto_now=True)
     
@@ -43,9 +44,8 @@ class Post(models.Model):
     description = models.CharField(max_length=4000)
     thread =  models.ForeignKey(Thread)  
     created_by = models.ForeignKey(User)   
-    created_at =models.DateTimeField(auto_now=True)
-    updated_by = models.ForeignKey(User)   
-    updated_at =models.DateTimeField()
+    created_at =models.DateTimeField(auto_now=True,null=True)
+
     def __unicode__(self):
         return "%s" % (self.title, self.thread)
     

@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
@@ -7,7 +7,11 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">	
 	
-	<link rel="stylesheet" href="{{ MEDIA_URL }}css/libs/bootstrap.min.css">						
+	<link rel="stylesheet" href="{{ MEDIA_URL }}css/libs/bootstrap.min.css">
+	<link rel="stylesheet" href="{{ MEDIA_URL }}css/libs/bootstrap-responsive.min.css">		
+	<style>
+      
+    </style>				
 	<script>window.jQuery || document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"><\/script>')</script>
 	<script src="{{ MEDIA_URL }}js/libs/bootstrap/bootstrap.min.js"></script>	
 	<link rel="shortcut icon" href="{{ MEDIA_URL }}images/favicon.ico" type="image/x-icon" />	
@@ -26,11 +30,37 @@
 <body>
 	<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 	
-	{% block site_wrapper %}{% endblock %}
-	<hr>
-	<footer>
-        <p>&copy; myForum 2012</p>
-    </footer>
-
+	<div class="container" style="padding-top: 10px">
+		<div class="navbar">
+	    <div class="navbar-inner">
+	      <div class="container">
+	        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	          <span class="icon-bar"></span>
+	          <span class="icon-bar"></span>
+	          <span class="icon-bar"></span>
+	        </a>
+	        <a class="brand" href="#">Forum</a>
+	        <ul class="nav pull-right">
+	          {% if user.is_authenticated %}
+	          	<li class="active"><a href="#">{{ user.username }}</a></li>
+	          {% else %}
+	            <a class="btn" href="/login/">Login</a>
+	            <a class="btn" href="/register/">Register</a>
+	          {% endif %}
+	        </ul<!-- /.nav-collapse -->
+	      </div>
+	    </div><!-- /navbar-inner -->
+	</div>
+		{% block site_wrapper %}{% endblock %}
+		<hr>
+		<footer>
+        	<p>&copy; myForum 2012</p>
+    	</footer>
+	</div>
+	
+	
+	{% block extra_content %}{% endblock %}
+	
+	
 </body>
 </html>

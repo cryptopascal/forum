@@ -59,7 +59,8 @@ EMAIL_PORT = 587
 #EMAIL_HOST = '127.0.0.1'
 #EMAIL_PORT = 1025
 
-
+import django.contrib.auth 
+LOGIN_URL = '/login/'
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

@@ -67,8 +67,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
    'django.core.context_processors.media',
    'django.core.context_processors.request',
    'django.core.context_processors.static',
-   'django.contrib.messages.context_processors.messages',              
-   'utils.context_processors.SITE',
+   'django.contrib.messages.context_processors.messages',
 )
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
@@ -95,11 +94,6 @@ SESSION_COOKIE_HTTPONLY = True
 ACCOUNT_ACTIVATION_DAYS = 7 # One-week activation window; 
 LOGIN_REDIRECT_URL = '/'
 
-#auth backends
-AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend',
-    'custom_registration.email_auth_backend.EmailAuthBackend',
-)
 
 
 
@@ -127,8 +121,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     #registration,
-    'registration',
-    'custom_registration',
+    #'registration',
     'crispy_forms'
 )
 #EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
