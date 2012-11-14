@@ -123,8 +123,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     #registration,
     #'registration',
-    'crispy_forms',
-    'south'
+    'crispy_forms'
 )
 #EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 

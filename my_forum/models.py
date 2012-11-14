@@ -12,6 +12,7 @@ from django.utils.translation import ugettext_lazy as _
 
 
 
+
 class Thread(models.Model):
     """
     this class descibes thread
@@ -22,13 +23,8 @@ class Thread(models.Model):
     created_at =models.DateTimeField(auto_now=True)
     
     def __unicode__(self):
-        return "%s" % (self.name)
-    
-    class Meta:        
-        verbose_name = _('Thread')
-        verbose_name_plural = _('Threads')
-        app_label = 'threads'    
-            
+        return "%s" % (self.title)
+
     def save(self,*args, **kwargs):
         if not self.id:
             self.slug = slugify(self.title)
@@ -48,11 +44,7 @@ class Post(models.Model):
 
     def __unicode__(self):
         return "%s" % (self.title, self.thread)
-    
-    class Meta:        
-        verbose_name = _('Post')
-        verbose_name_plural = _('Posts')
-        app_label = 'Post'    
+
             
     def save(self,*args, **kwargs):
         if not self.id:
