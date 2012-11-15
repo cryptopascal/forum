@@ -8,7 +8,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
 from django.utils.translation import ugettext_lazy as _
-
+from django.contrib import admin
 
 
 
@@ -21,15 +21,15 @@ class Thread(models.Model):
     title = models.CharField(max_length=100)
     created_by = models.ForeignKey(User)   
     created_at =models.DateTimeField(auto_now=True)
-    
+
     def __unicode__(self):
         return "%s" % (self.title)
-
+    
     def save(self,*args, **kwargs):
         if not self.id:
             self.slug = slugify(self.title)
-        super(Thread, self).save(*args, **kwargs)
-
+        super(Thread, self).save(*args, **kwargs)        
+    
 
 class Post(models.Model):
     """
@@ -49,3 +49,6 @@ class Post(models.Model):
         if not self.id:
             self.slug = slugify(self.title)
         super(Post, self).save(*args, **kwargs)
+        
+admin.site.register(Post)
+admin.site.register(Thread)
