@@ -1,0 +1,40 @@
+{% extends "general.html" %}
+{% block head_title %}Forum{% endblock %}
+
+{% block site_wrapper %}	
+	
+	<form class="well form-search">
+  		<input type="text" class="input-medium search-query">
+  		<button type="submit" class="btn">Search</button>
+  		<a href="/add/thread/" class="btn btn-primary">New thread</a>
+	</form>
+	<div class="row-fluid">
+		<div class="span12">
+			{% if threads %}
+				<table class="table table-bordered table-striped" id="t_threads_list">
+					<thead>
+						<tr>
+							<th>Thread / Title</th>
+							<th>Last Post By</th>
+							<th>Replies</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for thread in threads %}
+							<tr>
+								<td><a href="/thread/{{ thread.slugg }}">{{ thread.title }} {{ thread.slugg }}</a></td>
+								<td>{{ thread.last_post_user.username }}</td>
+								<td>{{ thread.replies }}</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+					
+				</table>
+			{% else %}
+				<p><h3>No Tread found.</h3></p>
+			{% endif %}
+			
+		</div>
+	</div>
+	
+{% endblock %}
