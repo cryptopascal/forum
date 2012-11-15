@@ -13,9 +13,20 @@ from django.contrib.auth import logout
 from django.template import RequestContext
 from my_forum.forms import *
 from django.contrib.auth.decorators import login_required
+from my_forum.utils import  *
 
 def main_page(request):
-    return render_to_response('index.html',RequestContext(request))
+    threads = Thread.objects.all()
+    threads_to_template = []
+    for t in threads:
+        a = ThreadsReport(title =t.title, 
+                          slug=t.slug,
+                          last_post_user= t.post_set.order_by("-created_at")[0].created_by,
+                          replies = t.post_set.count()-1)
+        threads_to_template.append(a)
+    variables = RequestContext(request,{
+                                        'threads': threads_to_template})
+    return render_to_response('index.html',variables)
 
 
 def register_page(request):
@@ -45,10 +56,11 @@ def save_thread(request):
     if request.method == 'POST':
         form = ThreadForm(request.POST)
         if form.is_valid():
-            thread,nada = Thread.objects.get_or_create(title=form.cleaned_data['thread_title'],created_by=request.user)
-            post,nada = Post.objects.get_or_create(title=form.cleaned_data['post_title'],
+            new_thread = Thread.objects.create(title=form.cleaned_data['thread_title'],created_by=request.user)
+            post= Post.objects.create(title=form.cleaned_data['post_title'],
                                                    description = form.cleaned_data['post_description'],
-                                                   created_by=request.user
+                                                   created_by=request.user,
+                                                   thread=new_thread
                                                    )
     else:
         form = ThreadForm()

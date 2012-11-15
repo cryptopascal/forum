@@ -12,7 +12,8 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Browsing
     (r'^$',main_page),
-    (r'add/thread/$',save_thread),    
+    (r'add/thread/$',save_thread),
+    (r'thread/(\w+)/$',save_post),      
     
     # Session management
     (r'^login/$','django.contrib.auth.views.login'),

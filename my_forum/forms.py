@@ -11,6 +11,7 @@ from my_forum.models import Thread,Post
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout,  Submit, HTML
 from crispy_forms.bootstrap import  FormActions
+from django.template.defaultfilters import slugify
 
 
 
@@ -125,3 +126,14 @@ class ThreadForm(forms.Form):
                 )
             )
         super(ThreadForm, self).__init__(*args, **kwargs)
+        
+    def clean_thread_title(self):
+        """
+        Validate that the username is alphanumeric and is not already
+        in use.
+        """
+        existing = Thread.objects.filter(slug__iexact=slugify(self.cleaned_data['thread_title']))
+        if existing.exists():
+            raise forms.ValidationError(_("Thread already exist."))
+        else:
+            return self.cleaned_data['thread_title']
