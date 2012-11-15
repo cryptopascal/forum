@@ -40,14 +40,22 @@
 	          <span class="icon-bar"></span>
 	        </a>
 	        <a class="brand" href="/">Forum</a>
-	        <ul class="nav pull-right">
-	          {% if user.is_authenticated %}
-	          	<li class="active"><a href="#">{{ user.username }}</a></li>
-	          {% else %}
-	            <a class="btn" href="/login/">Login</a>
+	         {% if user.is_authenticated %}
+		        <div class="btn-group pull-right">
+					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+						  <i class="icon-user"></i> {{ user.username }}
+						  <span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+					  <li><a href="/logout/">Sign Out</a></li>
+					</ul>
+				</div>
+	         {% else %}
+	         <ul class="nav pull-right">
+	        	<a class="btn" href="/login/">Login</a>
 	            <a class="btn" href="/register/">Register</a>
-	          {% endif %}
-	        </ul<!-- /.nav-collapse -->
+	         </ul>
+	         {% endif %}
 	      </div>
 	    </div><!-- /navbar-inner -->
 	</div>

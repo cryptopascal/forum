@@ -1,0 +1,11 @@
+{% load crispy_forms_tags %}
+<div class="span6">
+{% if form.errors %}
+        <div class="alert alert-error">
+            <a class="close" data-dismiss="alert" href="#">×</a>
+            <p><strong>Oh snap!</strong> Check errors.</p>
+        </div>
+    	{% endif %}		        
+{% crispy form form.helper %}	
+	
+</div>

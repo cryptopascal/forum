@@ -12,6 +12,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import logout
 from django.template import RequestContext
 from my_forum.forms import *
+from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
 from my_forum.utils import  *
 
@@ -62,12 +63,40 @@ def save_thread(request):
                                                    created_by=request.user,
                                                    thread=new_thread
                                                    )
+        return HttpResponseRedirect('/')
     else:
         form = ThreadForm()
     variables = RequestContext(request,{
                                         'form':form
                                         })
     return render_to_response('thread_save.html',variables)
+
+def save_post(request,thread_slug):
+    if request.method == 'POST':
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = Post.objects.create(title="none",
+                                                   description = form.cleaned_data['post_description'],
+                                                   created_by=request.user,
+                                                   thread=get_object_or_404(Thread,slug=thread_slug)
+                                                   )
+    elif request.GET.has_key('post_id'):
+        post = Post.objects.get(id=request.GET['post_id'])
+        post_description = post.description
+        form = PostForm({'post_description',post_description})
+        variables = RequestContext(request, {
+                                             'form': form
+                                             })
+        return render_to_response('post_form.html',variables)
+    form = PostForm()
+    thread =  get_object_or_404(Thread,slug=thread_slug)
+    posts = thread.post_set.order_by('-created_at')
+    variables = RequestContext(request,{
+                                        'form':form,
+                                        'thread': thread,
+                                        'posts': posts
+                                        })
+    return render_to_response('brows_thread.html',variables)
     
 def logout_page(request):
     logout(request)

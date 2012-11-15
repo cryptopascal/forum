@@ -137,3 +137,22 @@ class ThreadForm(forms.Form):
             raise forms.ValidationError(_("Thread already exist."))
         else:
             return self.cleaned_data['thread_title']
+
+
+class PostForm(forms.Form):
+    post_description =  forms.CharField(max_length=4000,
+                                widget=forms.Textarea(attrs=attrs_dict),
+                                label=_("New Post"))
+    def __init__(self, *args, **kwargs):
+        self.helper = FormHelper()
+        self.helper.form_id = ''        
+        self.helper.form_method = 'post'
+        self.helper.form_action = '.'
+        self.helper.form_class = "form-inline"
+        self.helper.error_text_inline = True
+        self.helper.layout = Layout('post_description',
+                                    FormActions(
+                                                Submit('submit', 'Add', css_class="btn-primary")
+                )
+            )
+        super(PostForm, self).__init__(*args, **kwargs)
