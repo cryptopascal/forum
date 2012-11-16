@@ -140,9 +140,11 @@ class ThreadForm(forms.Form):
 
 
 class PostForm(forms.Form):
+    post_id = forms.CharField(widget=forms.HiddenInput(attrs={'value':'2'}))
+    thread_nom = forms.CharField(widget=forms.HiddenInput(attrs={'value':'2'}))
     post_description =  forms.CharField(max_length=4000,
                                 widget=forms.Textarea(attrs=attrs_dict),
-                                label=_("New Post"))
+                                label=_("Post"))
     def __init__(self, *args, **kwargs):
         self.helper = FormHelper()
         self.helper.form_id = ''        
@@ -150,9 +152,9 @@ class PostForm(forms.Form):
         self.helper.form_action = '.'
         self.helper.form_class = "form-inline"
         self.helper.error_text_inline = True
-        self.helper.layout = Layout('post_description',
+        self.helper.layout = Layout('post_description','post_id','thread_nom',
                                     FormActions(
-                                                Submit('submit', 'Add', css_class="btn-primary")
+                                                Submit("btn-add-post", "Add Post", css_class="btn-primary")
                 )
             )
         super(PostForm, self).__init__(*args, **kwargs)

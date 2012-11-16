@@ -1,6 +1,6 @@
 
 
-<div class="span12">
+
 	<h2>{{thread.title}}</h2>
 	<br>
 	{% for post in posts %}
@@ -17,7 +17,7 @@
 							<p>{{ post.description }}</p> <br>
 							{% if not forloop.first %}
 							 	{% if post.created_by.username == user.username %}
-							 		<a href="/thread/edit/?post_id={{post.id}}" class="edit_post">Edit</a> | <a href="" class="delete">Delete</a>
+							 		<a href="/post/edit/{{thread.slug}}/?post_id={{post.id}}" class="edit_post">Edit</a> | <a href="" class="delete">Delete</a>
 							 	{% endif %}
 							{% endif %}
 						</td> 
@@ -26,5 +26,3 @@
 		</table>
 	{% endfor %}
 	
-</div>
-

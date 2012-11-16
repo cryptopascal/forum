@@ -4,9 +4,52 @@
 {% block site_wrapper %}	
 	
 	<div class="row-fluid">
-		{% include "posts_list.html" %}
+		<div class="span12">
+			{% include "posts_list.html" %}
+		</div>
 		{% include "post_form.html" %}
 		
 	</div>
 	
 {% endblock %}
+{% block extra_content %}
+	<script type="text/javascript">
+		$('.edit_post').bind('click', function() {
+  			var link = $(this).attr("href");
+  			var td_elm = $(this).parent();
+  			td_elm.load(link,null,function(){
+				$("#submit-id-btn-edit-post").submit(post_save);
+  			});
+  			return false;
+		});
+		
+		
+		function post_save(){
+			  var item = $(this).parent().parent();
+			  var data = {
+			    post_id: item.find("#post_id").val(),
+				post_description: item.find("#id_post_description").val(),
+				csrfmiddlewaretoken: getCookie('csrftoken')
+			  };
+			  $.post("/thread/" + $('#id_thread_nom').val() +"/?ajax",data,function(result){
+			    if (result!='failure') {
+				  $('.span12').childre().remove();
+				  $('.span12').html(result);
+				 $('.edit_post').bind('click', function() {
+					var link = $(this).attr("href");
+					var td_elm = $(this).parent();
+					td_elm.load(link,null,function(){
+						$("#submit-id-btn-edit-post").submit(post_save);
+						});
+					return false;
+				});
+				}
+				else{
+				  alert("Failed before saving.")
+				}
+			  }
+			  );
+			  return false;
+	}
+	</script>
+{% endblock%}
